@@ -4,7 +4,7 @@ top: true  # 或 pin: true
 toc: true
 date: 2025-12-12 20:14:04
 tags: [首页]
-categories: [Personal]
+categories: [个人]
 ---
 
 # 个人信息
