@@ -41,10 +41,10 @@ menu:
 code_blocks:
   # Code block theme: darker / pale night / light / ocean / false
   theme: light
-  macStyle: true
+  macStyle: 
   # Code block height limit (unit: px)
-  height_limit: true
-  word_wrap: true
+  height_limit: 
+  word_wrap: 
 
   # Toolbar
   copy: true
@@ -233,7 +233,7 @@ reward:
 # Post edit
 # Easily browse and edit blog source code online.
 post_edit:
-  enable: true
+  enable: false
   # url: https://github.com/user-name/repo-name/edit/branch-name/subdirectory-name/
   # For example: https://github.com/jerryc127/butterfly.js.org/edit/main/source/
   url: https://github.com/zala13/blog/edit/main/source/
@@ -301,7 +301,7 @@ aside:
       enable: true
       icon: fab fa-github
       text: Follow Me
-      link: https://github.com/xxxxxx
+      link: https://github.com/zala13
   card_announcement:
     enable: true
     content: This is my Blog
