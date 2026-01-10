@@ -1,0 +1,422 @@
+backend:
+  name: git-gateway
+  branch: main # 要更新的分支(可选；默认为主分支)
+  commit_messages:
+    create: Create {{collection}} “{{slug}}”
+    update: Update {{collection}} “{{slug}}”
+    delete: Delete {{collection}} “{{slug}}”
+    uploadMedia: Upload “{{path}}”
+    deleteMedia: Delete “{{path}}”
+    openAuthoring: '{{message}}'
+
+
+logo_url: zala13.svg
+
+
+# 禁用部署预览链接
+# show_preview_links: false
+
+
+# This line should *not* be indented
+publish_mode: editorial_workflow
+
+
+# This line should *not* be indented
+media_folder: "source/images/uploads" # 媒体文件将存储在图片/上载下的Repo中。
+public_folder: "/images/uploads" # 上传的媒体的src属性将以/images/uploads开头。
+
+
+site_url: https://zala1313.netlify.app/ # 网站网址
+display_url: https://zala1313.netlify.app/ # 显示网址
+
+
+locale: "zh_Hans" # 语言环境
+
+
+collections:
+
+
+  - name: "all-posts" # 在路由中使用，例如：/admin/collections/blog。
+    label: "All-Posts" # 在用户界面中使用
+    folder: "source/_posts/" # 存储文件的文件夹的路径。
+    # filter: {field: "categories", value: "Posts"}
+    create: false # 允许用户在这个集合中创建新的文件。
+    fields: # 每份文件的字段，通常是前面的内容。
+      - {label: "标题", name: "title", default: "Posts: ", widget: "string"}
+      - {label: "发布日期", name: "date", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss", dateFormat: "YYYY-MM-DD", timeFormat: "HH:mm:ss", required: false}
+      - {label: "更新日期", name: "updated", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss", dateFormat: "YYYY-MM-DD", timeFormat: "HH:mm:ss", required: false}
+      - {label: "标签", name: "tags", widget: "list", required: false}
+      - {label: "分类", name: "categories", widget: "list", required: false}
+      - {label: "关键词", name: "keywords", widget: "list", required: false}
+      - {label: "摘要", name: "description", widget: "string", required: false}
+      - {label: "永久链接", name: "permalink", widget: "string", required: false}
+      - {label: "评论", name: "comments", widget: "boolean", default: true, required: false}
+      - {label: "置顶", name: "pin", widget: "boolean", default: false, required: false}
+      - {label: "密码", name: "password", widget: "string", required: false}
+      - {label: "abstract", name: "abstract", default: "有东西被加密了, 请输入密码查看.", widget: "string", required: false}
+      - {label: "message", name: "message", default: "您好, 这里需要密码.", widget: "string", required: false}
+      - {label: "wrong_pass_message", name: "wrong_pass_message", default: "抱歉, 这个密码看着不太对, 请再试试.", widget: "string", required: false}
+      - {label: "wrong_hash_message", name: "wrong_hash_message", default: "抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.", widget: "string", required: false}
+      - {label: "内容", name: "body", widget: "markdown", required: false}
+
+
+  - name: "posts" # 在路由中使用，例如：/admin/collections/blog。
+    label: "Posts" # 在用户界面中使用
+    folder: "source/_posts/" # 存储文件的文件夹的路径。
+    filter: {field: "categories", value: "Posts"}
+    create: true # 允许用户在这个集合中创建新的文件。
+    fields: # 每份文件的字段，通常是前面的内容。
+      - {label: "标题", name: "title", default: "Posts: ", widget: "string"}
+      - {label: "发布日期", name: "date", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss", dateFormat: "YYYY-MM-DD", timeFormat: "HH:mm:ss", required: false}
+      - {label: "更新日期", name: "updated", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss", dateFormat: "YYYY-MM-DD", timeFormat: "HH:mm:ss", required: false}
+      - {label: "标签", name: "tags", widget: "list", required: false}
+      - {label: "分类", name: "categories", default: "Posts", widget: "list", required: false}
+      - {label: "关键词", name: "keywords", widget: "list", required: false}
+      - {label: "摘要", name: "description", widget: "string", required: false}
+      - {label: "永久链接", name: "permalink", widget: "string", required: false}
+      - {label: "评论", name: "comments", widget: "boolean", default: true, required: false}
+      - {label: "置顶", name: "pin", widget: "boolean", default: false, required: false}
+      - {label: "密码", name: "password", widget: "string", required: false}
+      - {label: "abstract", name: "abstract", default: "有东西被加密了, 请输入密码查看.", widget: "string", required: false}
+      - {label: "message", name: "message", default: "您好, 这里需要密码.", widget: "string", required: false}
+      - {label: "wrong_pass_message", name: "wrong_pass_message", default: "抱歉, 这个密码看着不太对, 请再试试.", widget: "string", required: false}
+      - {label: "wrong_hash_message", name: "wrong_hash_message", default: "抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.", widget: "string", required: false}
+      - {label: "内容", name: "body", widget: "markdown", required: false}
+
+
+  - name: "ssn" # 在路由中使用，例如：/admin/collections/blog。
+    label: "碎碎念" # 在用户界面中使用
+    folder: "source/_posts" # 存储文件的文件夹的路径。
+    filter: {field: "categories", value: "碎碎念"}
+    create: true # 允许用户在这个集合中创建新的文件。
+    fields: # 每份文件的字段，通常是前面的内容。
+      - {label: "标题", name: "title", default: "碎碎念: ", widget: "string"}
+      - {label: "发布日期", name: "date", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss", dateFormat: "YYYY-MM-DD", timeFormat: "HH:mm:ss", required: false}
+      - {label: "更新日期", name: "updated", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss", dateFormat: "YYYY-MM-DD", timeFormat: "HH:mm:ss", required: false}
+      - {label: "标签", name: "tags", widget: "list", default: "S:N" , required: true}
+      - {label: "分类", name: "categories", widget: "list", default: "碎碎念", required: false}
+      - {label: "关键词", name: "keywords", widget: "list", required: false}
+      - {label: "摘要", name: "description", widget: "list", required: false}
+      - {label: "永久链接", name: "permalink", widget: "string", required: false}
+      - {label: "评论", name: "comments", widget: "boolean", default: true, required: false}
+      - {label: "置顶", name: "pin", widget: "boolean", default: false, required: false}
+      - {label: "密码", name: "password", widget: "string", required: false}
+      - {label: "abstract", name: "abstract", default: "有东西被加密了, 请输入密码查看.", widget: "string", required: false}
+      - {label: "message", name: "message", default: "您好, 这里需要密码.", widget: "string", required: false}
+      - {label: "wrong_pass_message", name: "wrong_pass_message", default: "抱歉, 这个密码看着不太对, 请再试试.", widget: "string", required: false}
+      - {label: "wrong_hash_message", name: "wrong_hash_message", default: "抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.", widget: "string", required: false}
+      - {label: "内容", name: "body", widget: "markdown", required: false}
+
+
+
+
+  - name: "sy" # 在路由中使用，例如：/admin/collections/blog。
+    label: "摄影" # 在用户界面中使用
+    folder: "source/_posts" # 存储文件的文件夹的路径。
+    filter: {field: "categories", value: "摄影"}
+    create: true # 允许用户在这个集合中创建新的文件。
+    fields: # 每份文件的字段，通常是前面的内容。
+      - {label: "标题", name: "title", default: "摄影: ", widget: "string"}
+      - {label: "发布日期", name: "date", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss", dateFormat: "YYYY-MM-DD", timeFormat: "HH:mm:ss", required: false}
+      - {label: "更新日期", name: "updated", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss", dateFormat: "YYYY-MM-DD", timeFormat: "HH:mm:ss", required: false}
+      - {label: "标签", name: "tags", widget: "list", required: false}
+      - {label: "分类", name: "categories", widget: "list", default: "摄影", required: false}
+      - {label: "关键词", name: "keywords", widget: "list", required: false}
+      - {label: "摘要", name: "description", widget: "string", required: false}
+      - {label: "永久链接", name: "permalink", widget: "string", required: false}
+      - {label: "评论", name: "comments", widget: "boolean", default: true, required: false}
+      - {label: "置顶", name: "pin", widget: "boolean", default: false, required: false}
+      - {label: "密码", name: "password", widget: "string", required: false}
+      - {label: "abstract", name: "abstract", default: "有东西被加密了, 请输入密码查看.", widget: "string", required: false}
+      - {label: "message", name: "message", default: "您好, 这里需要密码.", widget: "string", required: false}
+      - {label: "wrong_pass_message", name: "wrong_pass_message", default: "抱歉, 这个密码看着不太对, 请再试试.", widget: "string", required: false}
+      - {label: "wrong_hash_message", name: "wrong_hash_message", default: "抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.", widget: "string", required: false}
+      - {label: "内容", name: "body", widget: "markdown", required: false}
+
+
+  - name: "zc" # 在路由中使用，例如：/admin/collections/blog。
+    label: "摘抄" # 在用户界面中使用
+    folder: "source/_posts/zc" # 存储文件的文件夹的路径。
+    filter: {field: "categories", value: "摘抄"}
+    create: true # 允许用户在这个集合中创建新的文件。
+    fields: # 每份文件的字段，通常是前面的内容。
+      - {label: "标题", name: "title", default: "摘抄: ", widget: "string"}
+      - {label: "发布日期", name: "date", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss", dateFormat: "YYYY-MM-DD", timeFormat: "HH:mm:ss", required: false}
+      - {label: "更新日期", name: "updated", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss", dateFormat: "YYYY-MM-DD", timeFormat: "HH:mm:ss", required: false}
+      - {label: "标签", name: "tags", widget: "list", required: false}
+      - {label: "分类", name: "categories", widget: "list", default: "摘抄", required: false}
+      - {label: "关键词", name: "keywords", widget: "list", required: false}
+      - {label: "摘要", name: "description", widget: "string", required: false}
+      - {label: "永久链接", name: "permalink", widget: "string", required: false}
+      - {label: "评论", name: "comments", widget: "boolean", default: true, required: false}
+      - {label: "置顶", name: "pin", widget: "boolean", default: false, required: false}
+      - {label: "密码", name: "password", widget: "string", required: false}
+      - {label: "abstract", name: "abstract", default: "有东西被加密了, 请输入密码查看.", widget: "string", required: false}
+      - {label: "message", name: "message", default: "您好, 这里需要密码.", widget: "string", required: false}
+      - {label: "wrong_pass_message", name: "wrong_pass_message", default: "抱歉, 这个密码看着不太对, 请再试试.", widget: "string", required: false}
+      - {label: "wrong_hash_message", name: "wrong_hash_message", default: "抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.", widget: "string", required: false}
+      - {label: "内容", name: "body", widget: "markdown", required: false}
+
+
+  - name: "bj" # 在路由中使用，例如：/admin/collections/blog。
+    label: "便笺" # 在用户界面中使用
+    folder: "source/_posts/bj" # 存储文件的文件夹的路径。
+    filter: {field: "categories", value: "便笺"}
+    create: true # 允许用户在这个集合中创建新的文件。
+    fields: # 每份文件的字段，通常是前面的内容。
+      - {label: "标题", name: "title", default: "便笺: ", widget: "string"}
+      - {label: "发布日期", name: "date", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss", dateFormat: "YYYY-MM-DD", timeFormat: "HH:mm:ss", required: false}
+      - {label: "更新日期", name: "updated", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss", dateFormat: "YYYY-MM-DD", timeFormat: "HH:mm:ss", required: false}
+      - {label: "标签", name: "tags", widget: "list", required: false}
+      - {label: "分类", name: "categories", widget: "list", default: "便笺", required: false}
+      - {label: "关键词", name: "keywords", widget: "list", required: false}
+      - {label: "摘要", name: "description", widget: "string", required: false}
+      - {label: "永久链接", name: "permalink", widget: "string", required: false}
+      - {label: "评论", name: "comments", widget: "boolean", default: true, required: false}
+      - {label: "置顶", name: "pin", widget: "boolean", default: false, required: false}
+      - {label: "密码", name: "password", widget: "string", required: false}
+      - {label: "abstract", name: "abstract", default: "有东西被加密了, 请输入密码查看.", widget: "string", required: false}
+      - {label: "message", name: "message", default: "您好, 这里需要密码.", widget: "string", required: false}
+      - {label: "wrong_pass_message", name: "wrong_pass_message", default: "抱歉, 这个密码看着不太对, 请再试试.", widget: "string", required: false}
+      - {label: "wrong_hash_message", name: "wrong_hash_message", default: "抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.", widget: "string", required: false}
+      - {label: "内容", name: "body", widget: "markdown", required: false}
+
+
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "source/about/index.md"
+        name: "about"
+        label: "关于"
+        fields:
+          - {label: "标题", name: "title", widget: "string"}
+          - {label: "评论", name: "comments", widget: "boolean", default: false, required: false}
+          - {label: "发布日期", name: "date", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss", dateFormat: "YYYY-MM-DD", timeFormat: "HH:mm:ss", required: false}
+          - {label: "更新日期", name: "updated", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss", dateFormat: "YYYY-MM-DD", timeFormat: "HH:mm:ss", required: false}
+          - {label: "layout", name: "layout", widget: "string", required: false}
+          - {label: "摘要", name: "description", widget: "string", required: false}
+          - {label: "内容", name: "body", widget: "markdown", required: false}
+
+
+      - file: "source/all-web/index.md"
+        name: "all-web"
+        label: "All-Web"
+        fields:
+          - {label: "标题", name: "title", widget: "string"}
+          - {label: "评论", name: "comments", widget: "boolean", default: false, required: false}
+          - {label: "发布日期", name: "date", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss", dateFormat: "YYYY-MM-DD", timeFormat: "HH:mm:ss", required: false}
+          - {label: "更新日期", name: "updated", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss", dateFormat: "YYYY-MM-DD", timeFormat: "HH:mm:ss", required: false}
+          - {label: "密码", name: "password", widget: "string", required: false}
+          - {label: "abstract", name: "abstract", default: "有东西被加密了, 请输入密码查看.", widget: "string", required: false}
+          - {label: "message", name: "message", default: "您好, 这里需要密码.", widget: "string", required: false}
+          - {label: "wrong_pass_message", name: "wrong_pass_message", default: "抱歉, 这个密码看着不太对, 请再试试.", widget: "string", required: false}
+          - {label: "wrong_hash_message", name: "wrong_hash_message", default: "抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.", widget: "string", required: false}
+          - {label: "layout", name: "layout", widget: "string", required: false}
+          - {label: "摘要", name: "description", widget: "string", required: false}
+          - {label: "内容", name: "body", widget: "markdown", required: false}
+
+
+      - file: "source/music/index.md"
+        name: "music"
+        label: "网易云音乐"
+        fields:
+          - {label: "标题", name: "title", widget: "string"}
+          - {label: "评论", name: "comments", widget: "boolean", default: false, required: false}
+          - {label: "发布日期", name: "date", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss", dateFormat: "YYYY-MM-DD", timeFormat: "HH:mm:ss", required: false}
+          - {label: "更新日期", name: "updated", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss", dateFormat: "YYYY-MM-DD", timeFormat: "HH:mm:ss", required: false}
+          - {label: "layout", name: "layout", widget: "string", required: false}
+          - {label: "摘要", name: "description", widget: "string", required: false}
+          - {label: "内容", name: "body", widget: "markdown", required: false}
+
+
+      - file: "source/name/index.md"
+        name: "name"
+        label: "NAME MD5值"
+        fields:
+          - {label: "标题", name: "title", widget: "string"}
+          - {label: "评论", name: "comments", widget: "boolean", default: false, required: false}
+          - {label: "发布日期", name: "date", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss", dateFormat: "YYYY-MM-DD", timeFormat: "HH:mm:ss", required: false}
+          - {label: "更新日期", name: "updated", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss", dateFormat: "YYYY-MM-DD", timeFormat: "HH:mm:ss", required: false}
+          - {label: "密码", name: "password", widget: "string", required: false}
+          - {label: "abstract", name: "abstract", default: "有东西被加密了, 请输入密码查看.", widget: "string", required: false}
+          - {label: "message", name: "message", default: "您好, 这里需要密码.", widget: "string", required: false}
+          - {label: "wrong_pass_message", name: "wrong_pass_message", default: "抱歉, 这个密码看着不太对, 请再试试.", widget: "string", required: false}
+          - {label: "wrong_hash_message", name: "wrong_hash_message", default: "抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.", widget: "string", required: false}
+          - {label: "layout", name: "layout", widget: "string", required: false}
+          - {label: "摘要", name: "description", widget: "string", required: false}
+          - {label: "内容", name: "body", widget: "markdown", required: false}
+          
+      - file: "source/reading/index.md"
+        name: "reading"
+        label: "阅读足迹"
+        fields:
+          - {label: "标题", name: "title", widget: "string"}
+          - {label: "评论", name: "comments", widget: "boolean", default: false, required: false}
+          - {label: "发布日期", name: "date", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss", dateFormat: "YYYY-MM-DD", timeFormat: "HH:mm:ss", required: false}
+          - {label: "更新日期", name: "updated", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss", dateFormat: "YYYY-MM-DD", timeFormat: "HH:mm:ss", required: false}
+          - {label: "密码", name: "password", widget: "string", required: false}
+          - {label: "abstract", name: "abstract", default: "有东西被加密了, 请输入密码查看.", widget: "string", required: false}
+          - {label: "message", name: "message", default: "您好, 这里需要密码.", widget: "string", required: false}
+          - {label: "wrong_pass_message", name: "wrong_pass_message", default: "抱歉, 这个密码看着不太对, 请再试试.", widget: "string", required: false}
+          - {label: "wrong_hash_message", name: "wrong_hash_message", default: "抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.", widget: "string", required: false}
+          - {label: "layout", name: "layout", widget: "string", required: false}
+          - {label: "摘要", name: "description", widget: "string", required: false}
+          - {label: "内容", name: "body", widget: "markdown", required: false}
+
+
+      - file: "source/software/index.md"
+        name: "software"
+        label: "我的宝藏软件"
+        fields:
+          - {label: "标题", name: "title", widget: "string"}
+          - {label: "评论", name: "comments", widget: "boolean", default: false, required: false}
+          - {label: "发布日期", name: "date", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss", dateFormat: "YYYY-MM-DD", timeFormat: "HH:mm:ss", required: false}
+          - {label: "更新日期", name: "updated", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss", dateFormat: "YYYY-MM-DD", timeFormat: "HH:mm:ss", required: false}
+          - {label: "layout", name: "layout", widget: "string", required: false}
+          - {label: "摘要", name: "description", widget: "string", required: false}
+          - {label: "内容", name: "body", widget: "markdown", required: false}
+
+
+      - file: "source/friends/index.md"
+        name: "friends"
+        label: "友链"
+        fields:
+          - {label: "标题", name: "title", widget: "string"}
+          - {label: "评论", name: "comments", widget: "boolean", default: false, required: false}
+          - {label: "发布日期", name: "date", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss", dateFormat: "YYYY-MM-DD", timeFormat: "HH:mm:ss", required: false}
+          - {label: "更新日期", name: "updated", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss", dateFormat: "YYYY-MM-DD", timeFormat: "HH:mm:ss", required: false}
+          - {label: "layout", name: "layout", widget: "string", required: false}
+          - {label: "摘要", name: "description", widget: "string", required: false}
+          - {label: "内容", name: "body", widget: "markdown", required: false}
+
+
+  - name: pages-test
+    label: 'Pages (测试)'
+    label_singular: 'Page'
+    folder: 'source'
+    create: true
+    # 添加嵌套对象将显示集合文件夹结构
+    nested:
+      depth: 100 # 在收藏树中显示的最大深度
+      summary: '{{title}}' # 树节点的可选摘要，默认为推断出的标题字段
+    filter:
+      exclude: 
+        - '_post' # 排除 source/_post 文件夹中的内容
+    fields:
+          - {label: "标题", name: "title", widget: "string"}
+          - {label: "评论", name: "comments", widget: "boolean", default: false, required: false}
+          - {label: "发布日期", name: "date", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss", dateFormat: "YYYY-MM-DD", timeFormat: "HH:mm:ss", required: false}
+          - {label: "更新日期", name: "updated", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss", dateFormat: "YYYY-MM-DD", timeFormat: "HH:mm:ss", required: false}
+          - {label: "layout", name: "layout", widget: "string", required: false}
+          - {label: "摘要", name: "description", widget: "string", required: false}
+          - {label: "密码", name: "password", widget: "string", required: false}
+          - {label: "abstract", name: "abstract", default: "有东西被加密了, 请输入密码查看.", widget: "string", required: false}
+          - {label: "message", name: "message", default: "您好, 这里需要密码.", widget: "string", required: false}
+          - {label: "wrong_pass_message", name: "wrong_pass_message", default: "抱歉, 这个密码看着不太对, 请再试试.", widget: "string", required: false}
+          - {label: "wrong_hash_message", name: "wrong_hash_message", default: "抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.", widget: "string", required: false}
+          - {label: "内容", name: "body", widget: "markdown", required: false}
+    # 添加带有路径属性的元对象，可以编辑条目的路径
+    # 移动现有条目会将该条目整个子树移动到新位置
+    meta: { path: { widget: string, label: 'Path', index_file: 'index' } }
+
+
+  - name: 'data'
+    label: 'Data'
+    label_singular: 'data'
+    description: 'Manage the list of data.'
+    files:
+      - name: 'friends'
+        label: 'Friends List'
+        file: 'source/_data/friends.yml'
+        fields:
+          - label: 'friendlinks'
+            name: 'friendlinks'
+            widget: 'list'
+            fields:
+              - label: '分组标题'
+                name: 'group'
+                widget: 'string'
+              - label: '分组描述'
+                name: 'description'
+                widget: 'string'
+                required: false
+              - label: 'Items'
+                name: 'items'
+                widget: 'list'
+                fields:
+                  - label: '名称'
+                    name: 'title'
+                    widget: 'string'
+                  - label: '头像'
+                    name: 'avatar'
+                    widget: 'string'
+                  - label: '链接'
+                    name: 'url'
+                    widget: 'string'
+                  - label: '日期'
+                    name: 'adddate'
+                    widget: "datetime"
+                    format: "YYYY-MM-DD HH:mm:ss"
+                    dateFormat: "YYYY-MM-DD"
+                    timeFormat: "HH:mm:ss"
+                    required: false
+                  - label: 'RSS'
+                    name: 'rss'
+                    widget: 'string'
+                    required: false
+                  - label: '联系方式'
+                    name: 'contact'
+                    widget: 'string'
+                    required: false
+                  - label: '截图'
+                    name: 'screenshot'
+                    widget: 'string'
+                    required: false
+                  - label: '关键词'
+                    name: 'keywords'
+                    widget: 'string'
+                    required: false
+                  - label: '描述'
+                    name: 'description'
+                    widget: 'string'
+                    required: false
+      - name: 'sites'
+        label: 'Sites List'
+        file: 'source/_data/sites.yml'
+        fields:
+          - label: 'sites'
+            name: 'sites'
+            widget: 'list'
+            fields:
+              - label: '分组标题'
+                name: 'group'
+                widget: 'string'
+              - label: '分组描述'
+                name: 'description'
+                widget: 'string'
+                required: false
+              - label: 'Items'
+                name: 'items'
+                widget: 'list'
+                fields:
+                  - label: '名称'
+                    name: 'title'
+                    widget: 'string'
+                  - label: '头像'
+                    name: 'avatar'
+                    widget: 'string'
+                  - label: '链接'
+                    name: 'url'
+                    widget: 'string'
+                  - label: '截图'
+                    name: 'screenshot'
+                    widget: 'string'
+                    required: false
+                  - label: '关键词'
+                    name: 'keywords'
+                    widget: 'string'
+                    required: false
+                  - label: '描述'
+                    name: 'description'
+                    widget: 'string'
+                    required: false

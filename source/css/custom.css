@@ -1,0 +1,39 @@
+/* 文章目录样式 */
+.article-toc {
+  margin: 20px 0;
+  padding: 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background-color: #f9fafb;
+}
+
+.article-toc h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 16px;
+  color: #1f2937;
+  border-bottom: 1px dashed #d1d5db;
+  padding-bottom: 8px;
+}
+
+.article-toc ul {
+  padding-left: 20px;
+  margin: 0;
+  list-style: disc;
+}
+
+.article-toc li {
+  margin: 6px 0;
+  font-size: 14px;
+  color: #4b5563;
+}
+
+.article-toc a {
+  color: #3b82f6;
+  text-decoration: none;
+}
+
+.article-toc a:hover {
+  color: #2563eb;
+  text-decoration: underline;
+}

@@ -1,0 +1,15 @@
+<svg width="320" height="100" xmlns="http://www.w3.org/2000/svg">
+    <text 
+        x="80" 
+        y="75" 
+        font-family="Arial, Helvetica, sans-serif" 
+        font-size="60" 
+        fill="#000000ff" 
+        stroke="#000000ff" 
+        stroke-width="2"
+        text-anchor="center"
+        dominant-baseline="auto"
+    >
+        ZALA
+    </text>
+</svg>
