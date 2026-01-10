@@ -1,11 +1,11 @@
-title: Hexo
+title: ZALA
 subtitle: ''
 description: ''
 keywords: null
 author: ZALA
-language: en
+language: zh-CN
 timezone: ''
-url: http://example.com
+url: https://zala13.github.io
 permalink: ':year/:month/:day/:title/'
 permalink_defaults: null
 pretty_urls:
