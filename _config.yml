@@ -74,7 +74,7 @@ ignore: null
 # 自定义样式文件
 styles:
   - /css/custom.css  # 引入你创建的自定义样式
-theme: icarus
+theme: butterfly
 deploy:
   type: git
   repo: https://github.com/zala13/zala13.github.io.git
