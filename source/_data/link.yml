@@ -1,0 +1,70 @@
+# flink_style: butterfly / flexcard
+- class_name: 友情链接
+  class_desc: 这里的每个站点，都耐人寻味……
+  flink_style: flexcard
+  link_list:
+    - name: Butterfly
+      link: https://butterfly.js.org/
+      avatar: https://butterfly.js.org/img/butterfly-icon.png
+      siteshot: https://butterfly.js.org/img/butterfly-icon.png
+      descr: 博客主题
+      type: 技术
+    # - name: 码农观测站
+    #   link: https://www.codeobservatory.cn/
+    #   avatar: https://www.codeobservatory.cn/img/butterfly-icon.webp
+    #   siteshot: https://www.codeobservatory.cn/images/shot.png
+    #   descr: 技术分享，编程学习
+    #   type: 技术
+    - name: JavaGuide
+      link: https://javaguide.cn/
+      avatar: https://javaguide.cn/logo.svg
+      siteshot: https://javaguide.cn/logo.png
+      descr: 技术分享，编程学习
+      type: 技术
+    - name: 小林 coding
+      link: https://xiaolincoding.com/
+      avatar: https://cdn.xiaolincoding.com/logo.png
+      siteshot: https://cdn.xiaolincoding.com/logo.png
+      descr: 技术分享，编程学习
+      type: 技术
+    - name: 检索增强生成 (RAG) 技术全栈指南
+      link: https://datawhalechina.github.io/all-in-rag/#/
+      avatar: https://datawhalechina.github.io/all-in-rag/logo.svg
+      siteshot: https://datawhalechina.github.io/all-in-rag/logo.svg
+      descr: 技术分享，工程学习
+      type: 技术
+
+- class_name: 笔记链接
+  class_desc: 这里的每个站点，都久经折磨……
+  flink_style: flexcard
+  link_list:
+    - name: Java 基础(@s663191)
+      link: https://my.feishu.cn/wiki/KoY0wmRjciZFqekBMMYc5zyUnce
+      avatar: https://www.emojiall.com/en/header-svg/%F0%9F%A5%B0.svg
+      siteshot: https://www.emojiall.com/en/header-svg/%F0%9F%A5%B0.svg
+      descr: 就是基础诶
+      type: 技术
+    - name: Java 集合(697w#822)
+      link: https://my.feishu.cn/wiki/QPhAwoMIuisfghkj0J3c5Tncnpd
+      avatar: https://www.emojiall.com/en/header-svg/%F0%9F%98%9D.svg
+      siteshot: https://www.emojiall.com/en/header-svg/%F0%9F%98%9D.svg
+      descr: 有点数据结构
+      type: 技术
+    - name: Java 并发(712@16j6)
+      link: https://my.feishu.cn/wiki/KV5kwGBv3i4JB6kkAzKc7oh6nkh
+      avatar: https://www.emojiall.com/en/header-svg/%F0%9F%98%9C.svg
+      siteshot: https://www.emojiall.com/en/header-svg/%F0%9F%98%9C.svg
+      descr: 哎呦我去
+      type: 技术
+    - name: Java 虚拟机(2C6@3991)
+      link: https://my.feishu.cn/wiki/L0JqwOohMi8YX4kvWmqcH9AbnCh
+      avatar: https://www.emojiall.com/en/header-svg/%F0%9F%98%8B.svg
+      siteshot: https://www.emojiall.com/en/header-svg/%F0%9F%98%8B.svg
+      descr: 啧啧加瓦
+      type: 技术
+    - name: MySQL(95967p@1)
+      link: https://my.feishu.cn/wiki/CSrKwloUTiaO2qkVN3ycwjVxnyg
+      avatar: https://www.emojiall.com/en/header-svg/%F0%9F%A7%90.svg
+      siteshot: https://www.emojiall.com/en/header-svg/%F0%9F%A7%90.svg
+      descr: 哇偶
+      type: 技术
